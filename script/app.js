@@ -4,9 +4,9 @@ app.controller('myController', myController);
 
 function myController($scope, $http) {
   $scope.title = "Makeup | Products";
-  $scope.url = 'http://makeup-api.herokuapp.com/api/v1/products.json';
-  $scope.url_brands = 'http://makeup-api.herokuapp.com/api/v1/products.json';
-  $scope.url_types = 'http://makeup-api.herokuapp.com/api/v1/products.json';
+  $scope.url = 'https://makeup-api.herokuapp.com/api/v1/products.json';
+  $scope.url_brands = 'https://makeup-api.herokuapp.com/api/v1/products.json';
+  $scope.url_types = 'https://makeup-api.herokuapp.com/api/v1/products.json';
 
   $scope.products = []
   $scope.product = []
