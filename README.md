@@ -1,0 +1,1 @@
+- Integração com no mínimo 3 métodos da API (listAllProducts, getEspecificType, CheckItem)

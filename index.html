@@ -1,0 +1,103 @@
+<!doctype html>
+<html ng-app="cepAuxiliador" ng-controller="myController" ng-init="initData()">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="shortcut icon" href="battom.png" type="image/png">
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning container">
+      <div class="container-fluid">
+        <a class="navbar-brand lead" href="#">{{ title }}</a>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-12 p-1">
+          <h1>Tipo de produto</h1>
+          <div class="all-products d-flex flex-column align-items-center">
+            <div class="d-flex">
+              <button class="p-2" ng-click="listAllProducts()">Todos</button>
+            </div>
+            <div class="d-flex">
+              <button class="p-2" ng-click="getEspecificType('lip_liner')">Lipliner</button>
+            </div>
+            <div class="d-flex">
+              <button class="p-2" ng-click="getEspecificType('lipstick')">Lipstick</button>
+            </div>
+            <div class="d-flex">
+              <button class="p-2" ng-click="getEspecificType('foundation')">Foundation</button>
+            </div>
+            <div class="d-flex">
+              <button class="p-2" ng-click="getEspecificType('eyeliner')">Eyeliner</button>
+            </div>
+            <div class="d-flex">
+              <button class="p-2" ng-click="getEspecificType('eyeshadow')">Eyeshadow</button>
+            </div>
+            <div class="d-flex">
+              <button class="p-2" ng-click="getEspecificType('blush')">Blush</button>
+            </div>
+            <div class="d-flex">
+              <button class="p-2"ng-click="getEspecificType('bronzer')">Bronzer</button>
+            </div>
+            <div class="d-flex">
+              <button class="p-2" ng-click="getEspecificType('mascara')">Mascara</button>
+            </div>
+            <div class="d-flex">
+              <button class="p-2" ng-click="getEspecificType('eyebrow')">Eyebrow</button>
+            </div>
+            <div class="d-flex">
+              <button class="p-2" ng-click="getEspecificType('nail_polish')">Nailpolish</button>
+            </div>
+          </div>
+        </div> 
+        
+        <div class="col-md-6 col-12 p-1">
+          <h1>Produtos (aguarde):</h1>
+          <!-- <div id="placeholder" class="linear-background d-flex align-items-center align-content-center justify-content-center">
+            <div>
+              <strong>Carregando...</strong>
+              <br> Se estiver demorando demais, acesse a api, ela é bem instável 
+            </div>
+          </div> -->
+          <div class="all-products d-flex flex-column align-items-center">
+            <div ng-repeat="i in products" class="d-flex">
+              <div class="p-2">
+                {{ i.name }}
+              </div>
+              <button class="p-2" ng-click="CheckItem(i.product_api_url)">Checar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-12">
+          <div class="produto">
+            <span>Nome: <strong>{{product.name}}</strong></span><br>
+            <span>Marca: <strong>{{product.brand}}</strong></span><br>
+            <span>Preço: <strong>${{product.price}}</strong></span><br>
+            <span>Imagem: <img ng-src="{{product.image_link}}" height="200px"> </span><br>  
+          </div>
+        </div>
+      </div>
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">© 2021 - Fundamentos ao Desenvolvimento Web</p>
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="https://github.com/IsabelaDaCampo" target="_blank" class="nav-link px-2 text-muted">Carlos Giongo</a></li>
+        </ul>
+      </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    <script src="./script/angular.js"></script>
+    <script src="./script/app.js"></script>
+  </body>
+</html>
